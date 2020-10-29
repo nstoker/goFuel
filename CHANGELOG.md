@@ -7,4 +7,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Initial creation of project
+- Initial creation of project.
+- Added landing page code.
