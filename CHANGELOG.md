@@ -9,6 +9,8 @@ The application configuration version is in `internal/pkg/version/version.go`.
 
 ## [Unreleased]
 
+- Added migration code.
+
 ## v0.0.1 2020-10-29
 
 - Initial creation of project.
