@@ -7,12 +7,13 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
+	"github.com/nstoker/gofuel/internal/pkg/version"
 	landing "github.com/nstoker/gofuel/web/landing/templates"
 	"github.com/sirupsen/logrus"
 )
 
 func main() {
-	fmt.Println("Initialising")
+	fmt.Println("Initialising " + version.Version)
 
 	godotenv.Load(".env")
 	port := os.Getenv("PORT")
