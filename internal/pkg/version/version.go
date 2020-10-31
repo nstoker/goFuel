@@ -1,4 +1,6 @@
 package version
 
 // Version is the application version
-const Version = "v0.0.2"
+func Version() string {
+	return "v0.0.2"
+}

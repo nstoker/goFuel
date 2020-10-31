@@ -23,8 +23,30 @@ func TestDownUpMigrate(t *testing.T) {
 		t.Fatal(err)
 	}
 
+	err = m.MigrateDown(dsn)
+	if err != nil {
+		t.Fatalf("expected no error on multiple down migrations: %s", err)
+	}
+
 	err = m.MigrateUp(dsn)
 	if err != nil {
 		t.Fatal(err)
+	}
+
+	err = m.MigrateUp(dsn)
+	if err != nil {
+		t.Fatalf("expected no error on multiple up migrations %s", err)
+	}
+}
+
+func TestMigrateWithoutDSN(t *testing.T) {
+	dsn := ""
+	err := m.MigrateDown(dsn)
+	if err == nil {
+		t.Errorf("failed to detect an empty dsn")
+	}
+	err = m.MigrateUp(dsn)
+	if err == nil {
+		t.Errorf("failed to detect an empty up dsn")
 	}
 }

@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Initialising " + version.Version)
+	fmt.Println("Initialising " + version.Version())
 
 	godotenv.Load(".env")
 	port := os.Getenv("PORT")
