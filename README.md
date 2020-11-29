@@ -2,6 +2,23 @@
 
 An attempt at building a Golang powered Fuel tracking system for motorists. Or anybody else really.
 
+## End points
+
+|endpoint|parameters|notes|
+|-|-|-|
+|`/health-check`||Returns system status|
+
+### `/health-check`
+
+Returns:
+
+```json
+{
+    "alive": true,
+    "version": "v0.0.2"
+}
+```
+
 ## Environment variables
 
 A number of enviroment variables are required in production. For the benefit of development and test, you can create `.env` and `.test.env` files based on the `example.env` file in the repository. Or create the requesite files in your environment.

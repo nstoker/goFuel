@@ -8,6 +8,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 	d "github.com/nstoker/gofuel/internal/pkg/database"
+	h "github.com/nstoker/gofuel/internal/pkg/handlers"
 	"github.com/nstoker/gofuel/internal/pkg/version"
 	landing "github.com/nstoker/gofuel/web/landing/templates"
 	"github.com/sirupsen/logrus"
@@ -43,6 +44,7 @@ func initialiseRouting() *mux.Router {
 	r.PathPrefix("/vendor").Handler(
 		http.StripPrefix("/vendor",
 			http.FileServer(http.Dir("./static/vendor"))))
+	r.HandleFunc("/health-check", h.HealthCheckHandler)
 	r.Use(loggingMiddleware)
 
 	return r
